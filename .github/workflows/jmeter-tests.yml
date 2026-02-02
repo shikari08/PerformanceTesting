@@ -27,7 +27,12 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Run JMeter Test
+      - name: Clean Previous Results
+        run: |
+          rm -rf result-reports
+          rm -f result.jtl
+
+      - name: Run JMeter Test & Generate Report
         uses: QAInsights/PerfAction@v5.6.2
         with:
           test-plan-path: ${{ inputs.test_plan || 'RegressionSuite/SpecificAPIs/Regression_APIs.jmx' }}
@@ -37,6 +42,7 @@ jobs:
             -Jduration=${{ inputs.duration || '60' }} 
             -JapiKey=${{ secrets.API_KEY }}
             -Jjmeter.save.saveservice.output_format=csv
+            -Jjmeter.save.saveservice.autoflush=true
             -e -o result-reports
 
       - name: Upload HTML Report
