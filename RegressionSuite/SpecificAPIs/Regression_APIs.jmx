@@ -70,7 +70,7 @@
           <stringProp name="LoopController.loops">1</stringProp>
         </LoopController>
         <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
@@ -1495,7 +1495,7 @@ if (responseTime &gt; maxDuration) {
             </JSR223Assertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Surveys_Recipients_API">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Surveys_Recipients_API" enabled="true">
             <stringProp name="HTTPSampler.domain">${EnvName}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">api/customersurveys/recipients/</stringProp>
@@ -2867,7 +2867,7 @@ if (responseTime &gt; maxDuration) {
             </JSR223Assertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tour_Sites_Profile_AreaType_API">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tour_Sites_Profile_AreaType_API" enabled="true">
             <stringProp name="HTTPSampler.domain">${EnvName}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">api/tour_sites/profile/?</stringProp>
@@ -2965,7 +2965,7 @@ if (responseTime &gt; maxDuration) {
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
               <collectionProp name="Asserion.test_strings">
                 <stringProp name="49586">200</stringProp>
               </collectionProp>
@@ -2975,7 +2975,7 @@ if (responseTime &gt; maxDuration) {
               <intProp name="Assertion.test_type">16</intProp>
             </ResponseAssertion>
             <hashTree/>
-            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion">
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
               <stringProp name="cacheKey">true</stringProp>
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
@@ -2995,7 +2995,7 @@ if (responseTime &gt; maxDuration) {
             </JSR223Assertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tour_Sites_Profile_Building_API">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tour_Sites_Profile_Building_API" enabled="true">
             <stringProp name="HTTPSampler.domain">${EnvName}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">api/tour_sites/profile/?</stringProp>
@@ -3093,7 +3093,7 @@ if (responseTime &gt; maxDuration) {
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
               <collectionProp name="Asserion.test_strings">
                 <stringProp name="49586">200</stringProp>
               </collectionProp>
@@ -3103,7 +3103,7 @@ if (responseTime &gt; maxDuration) {
               <intProp name="Assertion.test_type">16</intProp>
             </ResponseAssertion>
             <hashTree/>
-            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion">
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="JSR223 Assertion" enabled="true">
               <stringProp name="cacheKey">true</stringProp>
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
@@ -3123,7 +3123,7 @@ if (responseTime &gt; maxDuration) {
             </JSR223Assertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tour_Sites_Profile_Area_API">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tour_Sites_Profile_Area_API" enabled="true">
             <stringProp name="HTTPSampler.domain">${EnvName}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">api/tour_sites/profile/</stringProp>
@@ -3337,7 +3337,7 @@ if (responseTime &gt; maxDuration) {
             </JSR223Assertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tour_Sites_Area_Activity_API">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tour_Sites_Area_Activity_API" enabled="true">
             <stringProp name="TestPlan.comments">Api for area &apos;E3-004 Women&apos;s&apos; . ( Drilling into this area)
 </stringProp>
             <stringProp name="HTTPSampler.domain">${EnvName}</stringProp>
@@ -3453,7 +3453,7 @@ if (responseTime &gt; maxDuration) {
             </JSR223Assertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tour_Sites_Area_Summary_API">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Tour_Sites_Area_Summary_API" enabled="true">
             <stringProp name="TestPlan.comments">Summary results for area &apos;E3-004 Women&apos;s&apos; </stringProp>
             <stringProp name="HTTPSampler.domain">${EnvName}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -3630,7 +3630,7 @@ if (responseTime &gt; maxDuration) {
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="ComplimentsApiQueryParametersValue">
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="ComplimentsApiQueryParametersValue" enabled="false">
         <stringProp name="filename">/Users/andrey/Documents/performancetesting/RegressionSuite/Regression_APIs.jmx</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="variableNames"></stringProp>
