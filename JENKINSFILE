@@ -1,0 +1,35 @@
+node 
+{
+    stage ('clone') {
+              checkout([
+                  $class: 'GitSCM',
+                  branches: scm.branches,
+                  doGenerateSubmoduleConfigurations: false,
+                  extensions: scm.extensions + [[$class: 'SubmoduleOption', parentCredentials: true]],
+                  userRemoteConfigs: scm.userRemoteConfigs
+              ])
+            }
+    stage ('Run Tests'){
+        dir("/usr/jmeter/bin"){
+            sh "rm -f ${WORKSPACE}/target/jmeter/results/*.jtl"
+            sh "rm -f ${WORKSPACE}/target/jmeter/results/*.csv"
+            def reg = input(
+            message: 'What is the file path?', 
+            parameters: [
+                [$class: 'ChoiceParameterDefinition', 
+                    choices: 'RegressionSuite/PlayAndRecord/RecordingNavigationTypesPages.jmx\nRegressionSuite/PlayAndRecord/Optimization_Analysis_For_Some_APIs.jmx\nRegressionSuite/PlayAndRecord/SOW_MultiSite_recording.jmx\nRegressionSuite/PlayAndRecord/RedundantCallsForSomeAPIsTest.jmx\nRegressionSuite/SpecificAPIs/Regression_APIs.jmx\nRegressionSuite/SpecificAPIs/Service_Validation_Tests.jmx\nRegressionSuite/SpecificAPIs/ClockIn_ClockOut_Tests.jmx\nRegressionSuite/SpecificAPIs/Audits_inspections_After_optimizing.jmx\nRegressionSuite/SpecificAPIs/Audits_inspections_before_optimizing.jmx', 
+                    name: 'input', 
+                    description: 'Choose the file path you want to run']
+            ])
+
+            echo "Reg is ${reg}"
+            sh "/usr/jmeter/bin/jmeter -n -t ${WORKSPACE}/${reg} -l ${WORKSPACE}/target/jmeter/results/results.csv -j /dev/stdout"
+        }
+    }
+    stage('Results') {
+        dir("${WORKSPACE}/target/jmeter/results/"){
+            perfReport '*.csv'
+            }
+        }
+}
+    
