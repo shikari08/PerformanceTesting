@@ -40,7 +40,13 @@ jobs:
             -Jthreads=${{ inputs.threads || '50' }} 
             -Jduration=${{ inputs.duration || '60' }} 
             -JapiKey=${{ secrets.API_KEY }}
-            -e -o result-reports
+
+      - name: Generate HTML Report
+        uses: QAInsights/PerfAction@v5.6.2
+        if: always()
+        with:
+          test-plan-path: ${{ inputs.test_plan || 'RegressionSuite/SpecificAPIs/Regression_APIs.jmx' }}
+          args: "-g result.jtl -o result-reports"
 
       - name: Upload HTML Report
         uses: actions/upload-artifact@v4
