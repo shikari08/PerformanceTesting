@@ -6,7 +6,7 @@ on:
       test_plan:
         description: 'Test Plan (.jmx)'
         required: true
-        default: 'tests/performance.jmx'
+        default: 'RegressionSuite/SpecificAPIs/Regression_APIs.jmx'
       host:
         description: 'Target Host (e.g., bay27.4insite.com)'
         required: false
@@ -30,7 +30,6 @@ jobs:
       - name: Create Report Directories
         run: |
           mkdir -p result-reports
-          mkdir -p result-data
 
       - name: Run JMeter Test
         uses: QAInsights/PerfAction@v5.6.2
@@ -40,8 +39,7 @@ jobs:
             -EnvName=${{ inputs.host || 'bay27.4insite.com' }} 
             -Jthreads=${{ inputs.threads || '50' }} 
             -Jduration=${{ inputs.duration || '60' }} 
-            -JapiKey=${{ secrets.API_KEY }} 
-            -l result-data/result.jtl 
+            -JapiKey=${{ secrets.API_KEY }}
             -e -o result-reports
 
       - name: Upload HTML Report
