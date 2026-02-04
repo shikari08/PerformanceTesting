@@ -11,7 +11,12 @@
           </elementProp>
           <elementProp name="Jthreads" elementType="Argument">
             <stringProp name="Argument.name">Jthreads</stringProp>
-            <stringProp name="Argument.value">${__P(Jthreads,  100)}</stringProp>
+            <stringProp name="Argument.value">${__P(Threads,  100)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="JRampUpTime" elementType="Argument">
+            <stringProp name="Argument.name">JRampUpTime</stringProp>
+            <stringProp name="Argument.value">${_P(RampUpTime, 100)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -20,7 +25,7 @@
     <hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
         <stringProp name="ThreadGroup.num_threads">${Jthreads}</stringProp>
-        <intProp name="ThreadGroup.ramp_time">60</intProp>
+        <stringProp name="ThreadGroup.ramp_time">${JRampUpTime}</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
@@ -3561,7 +3566,7 @@ if (responseTime &gt; maxDuration) {
           </hashTree>
         </hashTree>
       </hashTree>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>

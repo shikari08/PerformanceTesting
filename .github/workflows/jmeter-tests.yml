@@ -38,8 +38,8 @@ jobs:
           test-plan-path: ${{ inputs.test_plan || 'RegressionSuite/SpecificAPIs/Regression_APIs.jmx' }}
           args: >-
             -JEnvName=${{ inputs.host || 'bay27.4insite.com' }} 
-            -Jthreads=${{ inputs.threads || '5' }} 
-            -Jduration=${{ inputs.duration || '60' }} 
+            -JThreads=${{ inputs.threads || '5' }} 
+            -JRampUpTime=${{ inputs.duration || '60' }} 
             -JapiKey=${{ secrets.API_KEY }}
             -Jjmeter.save.saveservice.output_format=csv
             -Jjmeter.save.saveservice.autoflush=true
