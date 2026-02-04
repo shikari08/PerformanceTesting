@@ -37,7 +37,7 @@ jobs:
         with:
           test-plan-path: ${{ inputs.test_plan || 'RegressionSuite/SpecificAPIs/Regression_APIs.jmx' }}
           args: >-
-            -EnvName=${{ inputs.host || 'bay27.4insite.com' }} 
+            -JEnvName=${{ inputs.host || 'bay27.4insite.com' }} 
             -Jthreads=${{ inputs.threads || '5' }} 
             -Jduration=${{ inputs.duration || '60' }} 
             -JapiKey=${{ secrets.API_KEY }}
