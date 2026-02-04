@@ -43,6 +43,7 @@ jobs:
             -JapiKey=${{ secrets.API_KEY }}
             -Jjmeter.save.saveservice.output_format=csv
             -Jjmeter.save.saveservice.autoflush=true
+            -Jjmeter.save.saveservice.url=true
             -e -o result-reports
 
       - name: Upload HTML Report
