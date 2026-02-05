@@ -19,6 +19,10 @@ on:
         description: 'Test Duration (ramp up time)'
         required: false
         default: '60'
+      loop_count:
+        description: 'Loop Count'
+        required: false
+        default: '1'
 
 jobs:
   performance-test:
@@ -41,6 +45,7 @@ jobs:
             -JThreads=${{ inputs.threads || '5' }} 
             -JRampUpTime=${{ inputs.duration || '60' }} 
             -JapiKey=${{ secrets.API_KEY }}
+            -JLoopCount=${{ inputs.loop_count || '1' }}
             -Jjmeter.save.saveservice.output_format=csv
             -Jjmeter.save.saveservice.autoflush=true
             -Jjmeter.save.saveservice.url=true
