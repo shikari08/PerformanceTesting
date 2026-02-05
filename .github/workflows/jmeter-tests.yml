@@ -16,7 +16,7 @@ on:
         required: false
         default: '50'
       duration:
-        description: 'Test Duration (seconds)'
+        description: 'Test Duration (ramp up time)'
         required: false
         default: '60'
 
